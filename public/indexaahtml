@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>maribelajarcoding.com</title>
+	<link rel="stylesheet" href="leaflet/leaflet.css" />
+	<script src="leaflet/leaflet.js"></script>
+<style type="text/css">
+	#mapid {
+		margin: 0 auto 0 auto;
+		height: 90%;
+		width: 80%;
+	}
+	html, body {
+        height: 100%;
+      }
+</style>
+
+</head>
+<body>
+<div id="mapid" ></div>
+<div align="center">
+	<h2><a href="https://maribelajarcoding.com" target="_blank">maribelajarcoding.com</a></h2>
+</div>
+<script type="text/javascript">
+ 		var long = 101.70682939999999;
+        var lang = 0.29334689999999997;
+		var mapOptions = {
+		   center: [lang,long],
+		   zoom: 13
+		}
+
+		var map = new L.map('mapid', mapOptions);
+
+		var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+		map.addLayer(layer);
+
+		var marker = L.marker([lang,long]).addTo(map);
+		marker.bindPopup('<b>Lapangan "Pancasila" Simpang Lima</b><br>Jl. Simpang Lima, Pleburan, Semarang Sel., Kota Semarang, Jawa Tengah 50241.');
+
+	</script>
+</body>
+</html>
